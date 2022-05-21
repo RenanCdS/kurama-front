@@ -1,0 +1,13 @@
+.container-card-row {
+  display: flex;
+  flex-wrap: wrap;
+
+  .default-card {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.container-button {
+  margin-right: 1rem;
+}

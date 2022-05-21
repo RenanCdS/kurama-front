@@ -1,6 +1,4 @@
 <ng-container>
   <router-outlet></router-outlet>
-  <div *ngIf="true" class="loading-page">
-    <mat-spinner></mat-spinner>
-  </div>
+  <ngx-loading [show]="isLoading"></ngx-loading>
 </ng-container>

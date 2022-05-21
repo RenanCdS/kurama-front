@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild, ViewContainerRef } from '@ang
 import { MatDialog } from '@angular/material/dialog';
 import { SpinnerService } from 'src/app/core/services/spinner.service';
 import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
+import { CreateContainerComponent } from '../../components/create-container/create-container.component';
 import { Container } from '../../models/container';
 import { ContainerService } from '../../services/container.service';
 
@@ -22,35 +23,23 @@ export class ContainerPageComponent implements OnInit {
     this.containerService.getContainers().subscribe(containers => {
       this.containers = containers;
     });
-
-    this.dialog.open(ConfirmDialogComponent, {
-      data: {
-        title: 'title',
-        positiveFunction: () => {
-          this.containerService.deleteAllContainers().subscribe(() => {
-            this.containers = [];
-            this.dialog.closeAll();
-          });
-        },
-        negativeFunction: () => {this.dialog.closeAll()}
-      }
-    });
   }
 
-  openConfirmationDialog(title: string): void {
+  deleteAllContainers(title: string): void {
     this.dialog.open(ConfirmDialogComponent, {
       data: {
         title,
         positiveFunction: () => {
+          this.spinnerService.openLoading();
           this.containerService.deleteAllContainers().subscribe(() => {
             this.containers = [];
+            this.spinnerService.closeLoading();
             this.dialog.closeAll();
           });
         },
         negativeFunction: () => {this.dialog.closeAll()}
       }
     });
-
   }
 
   deleteContainer(containerId: string, containerName: string): void {
@@ -68,6 +57,10 @@ export class ContainerPageComponent implements OnInit {
         negativeFunction: () => {this.dialog.closeAll();}
       }
     });
+  }
+
+  createNewContainer(): void {
+    this.dialog.open(CreateContainerComponent);
   }
 
   getContainerName(container: Container): string {

@@ -1,0 +1,27 @@
+<div>
+  <h1> Criar novo container</h1>
+  <form [formGroup]="formGroup">
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Nome da imagem</mat-label>
+        <input matInput formControlName="imageName">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Porta externa</mat-label>
+        <input matInput type="number" formControlName="externalPort">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Porta interna</mat-label>
+        <input matInput type="number" formControlName="internalPort">
+      </mat-form-field>
+    </div>
+    <div class="d-flex d-flex-center">
+      <button mat-raised-button color="primary" class="create-container-button" (click)="createContainer()">Criar</button>
+      <button mat-raised-button color="primary" (click)="cancel()">Cancelar</button>
+    </div>
+  </form>
+</div>

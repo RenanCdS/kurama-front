@@ -9,6 +9,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 const modules = [
   MatToolbarModule,
@@ -18,6 +22,9 @@ const modules = [
   MatProgressBarModule,
   MatIconModule,
   MatDialogModule,
+  MatSnackBarModule,
+  MatInputModule,
+  MatFormFieldModule,
   MatProgressSpinnerModule
 ];
 

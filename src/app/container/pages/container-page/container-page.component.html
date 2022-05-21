@@ -1,25 +1,25 @@
-<div class="default-container" #defaultContainer>
+<div class="default-container">
   <h1>Containers</h1>
-  <div class="default-card" *ngFor="let container of containers">
-    <mat-card>
-      <mat-card-title>{{getContainerName(container)}}</mat-card-title>
-      <mat-card-content>
-        <p>Nome da imagem: {{container.image}}</p>
-        <p>Status do container: {{container.status}}</p>
-      </mat-card-content>
-      <mat-divider inset></mat-divider>
-      <mat-card-actions>
-        <button mat-button (click)="deleteContainer(container.id, getContainerName(container))"><mat-icon>delete</mat-icon></button>
-      </mat-card-actions>
-      <mat-card-footer>
-        <ng-container *ngIf="container.status.includes('Up')">
-          <mat-progress-bar mode="buffer"></mat-progress-bar>
-        </ng-container>
-      </mat-card-footer>
-    </mat-card>
+  <div class="container-card-row">
+    <div class="default-card" *ngFor="let container of containers">
+      <mat-card>
+        <mat-card-title>{{getContainerName(container)}}</mat-card-title>
+        <mat-card-content>
+          <p>Nome da imagem: {{container.image}}</p>
+          <p>Status do container: {{container.status}}</p>
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions>
+          <button mat-button (click)="deleteContainer(container.id, getContainerName(container))"><mat-icon>delete</mat-icon></button>
+        </mat-card-actions>
+        <mat-card-footer>
+          <ng-container *ngIf="container.status.includes('Up')">
+            <mat-progress-bar mode="buffer"></mat-progress-bar>
+          </ng-container>
+        </mat-card-footer>
+      </mat-card>
+    </div>
   </div>
-
-  <button mat-raised-button color="warn">Excutar novo container</button>
-  <button mat-raised-button (click)="openConfirmationDialog('Deseja realmente deletar todos os containers ?')" color="warn">Deletar todos containers</button>
-
+  <button mat-raised-button color="warn" class="container-button" (click)="createNewContainer()">Excutar novo container</button>
+  <button mat-raised-button (click)="deleteAllContainers('Deseja realmente deletar todos os containers ?')" color="warn">Deletar todos containers</button>
 </div>

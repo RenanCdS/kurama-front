@@ -1,4 +1,13 @@
 <div>
-  <mat-toolbar color="warn">Kurama</mat-toolbar>
+  <mat-toolbar color="warn">
+    <div class="d-flex justify-content-between w-100">
+        <span [routerLink]="['/home']"><a>Kurama</a></span>
+        <div>
+            <button mat-button [routerLink]="['/containers']" class="button-link">Containers</button>
+            <button mat-button [routerLink]="['/imagens']" class="button-link">Imagens</button>
+            <button mat-button class="button-link">Sair</button>
+        </div>
+    </div>
+  </mat-toolbar>
   <router-outlet></router-outlet>
 </div>
