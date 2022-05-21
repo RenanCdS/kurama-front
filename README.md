@@ -1,27 +1,37 @@
-# KuramaFront
+# Kurama
+## Projeto front-end do mini orquestrador de containers Kurama.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
+![alt text](https://github.com/RenanCdS/kurama-front/blob/master/readme/kurama.webp?raw=true)
 
-## Development server
+## Execução
+- Para executar o projeto será necessário ter o [nodejs](https://nodejs.org/en/) instalado.
+- Com a runtime do nodejs instalado execute o comando "npm install" na raíz do projeto (onde está o arquivo package.json) para istalar as dependências.
+- Após isso execute o comando "npm start" na raíz do projeto. O projeto será executado na porta localhost:4200.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Obs: Para consumir a API será necessário executar a API da aplicação que está disponível no seguinte repositório [Backend](https://github.com/RenanCdS/kurama-back).
 
-## Code scaffolding
+[Demo do projeto no youtube](https://www.youtube.com/watch?v=zuHCJYfF8Ls)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Funcionalidades 
+O presente sistema tem as seguintes funcionalidades:
+- Listagem de todos os containers presentes na máquina hosta
+- Deleção de todos os containers na máquina host
+- Deleção de um container específico da máquina host
+- Criação de um novo container da máquina host
+- Pull de uma nova imagem do repositório
+- Deleção de uma imagem que está na máquina host
+- Deleção de todas as imagens que estão na máquina host
+- Listagem de todas as imagens que estão na máquina host
 
-## Build
+A aplicação foi feita em Angular e consome a API presente no seguinte repositório [Backend](https://github.com/RenanCdS/kurama-back).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+![alt text](https://github.com/RenanCdS/kurama-front/blob/master/readme/tela-inicial.PNG?raw=true)
+![alt text](https://github.com/RenanCdS/kurama-front/blob/master/readme/tela-containers.PNG?raw=true)
+![alt text](https://github.com/RenanCdS/kurama-front/blob/master/readme/tela-imagens.PNG?raw=true)
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+**EC9 - FESA**
+## Integrantes
+RACHEL MOREIRA 081180045  
+RENAN CASTRO 081180029  
+WELLISON SOUSA 081180040  
+WESLEY ROGÉRIO 081180035  
