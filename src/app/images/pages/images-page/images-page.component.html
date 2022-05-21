@@ -1,1 +1,19 @@
-<p>images-page works!</p>
+<div class="default-container">
+  <h1>Imagens</h1>
+  <div class="images-card-row">
+    <div class="default-card" *ngFor="let image of images">
+      <mat-card>
+        <mat-card-title>{{getImageName(image)}}</mat-card-title>
+        <mat-card-content>
+          <p>Tamanho: {{(image.size / 1000000).toFixed(2)}} MB</p>
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions>
+          <button mat-button (click)="deleteImage(image.id, getImageName(image))"><mat-icon>delete</mat-icon></button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <button mat-raised-button (click)="pullImage()" color="warn" class="images-button">Adicionar nova imagem</button>
+  <button mat-raised-button (click)="deleteAllImages()" color="warn">Deletar todas imagens</button>
+</div>

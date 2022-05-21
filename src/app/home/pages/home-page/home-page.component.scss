@@ -1,0 +1,28 @@
+.home {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to top left,rgba(200, 9, 9, 0.3), rgba(255, 0, 212, 0.3)), url(../../../../assets/imgs/background.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .main-title {
+      font-size: 5rem;
+      color: #fff;
+      text-shadow: 2px 2px #808080;
+      margin-bottom: 1rem;
+    }
+
+    .button-container {
+      margin-top: 1rem;
+      width: 20%;
+
+      .home-button {
+        width: 100%;
+        box-shadow: 1px 1px 4px #000;
+      }
+    }
+}

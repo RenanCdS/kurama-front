@@ -6,15 +6,18 @@
         <mat-card-title>{{getContainerName(container)}}</mat-card-title>
         <mat-card-content>
           <p>Nome da imagem: {{container.image}}</p>
-          <p>Status do container: {{container.status}}</p>
+          <p>Status do container: {{container.state}}</p>
         </mat-card-content>
         <mat-divider inset></mat-divider>
         <mat-card-actions>
           <button mat-button (click)="deleteContainer(container.id, getContainerName(container))"><mat-icon>delete</mat-icon></button>
         </mat-card-actions>
         <mat-card-footer>
-          <ng-container *ngIf="container.status.includes('Up')">
+          <ng-container *ngIf="container.state.includes('running')">
             <mat-progress-bar mode="buffer"></mat-progress-bar>
+          </ng-container>
+          <ng-container *ngIf="!container.state.includes('running')">
+            <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
           </ng-container>
         </mat-card-footer>
       </mat-card>

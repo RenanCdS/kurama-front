@@ -47,7 +47,7 @@ export class CreateContainerComponent implements OnInit {
       window.location.reload();
     }, error => {
       this.spinnerService.closeLoading()
-      this.snackBar.open('Ocorreu algum erro, por favor verifique a imagem e as portas', 'Ok', {duration: 5000})
+      this.snackBar.open('Ocorreu algum erro, por favor verifique se a imagem foi baixada e as portas', 'Ok', {duration: 5000})
     }, () => this.spinnerService.closeLoading());
   }
 

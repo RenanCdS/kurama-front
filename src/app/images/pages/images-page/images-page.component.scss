@@ -1,0 +1,13 @@
+.images-card-row {
+  display: flex;
+  flex-wrap: wrap;
+
+  .default-card {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.images-button {
+  margin-right: 1rem;
+}

@@ -5,15 +5,19 @@ import { BaseLayoutComponent } from './core/components/base-layout/base-layout.c
 const routes: Routes = [
   {
     path: '',
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path: '',
     component: BaseLayoutComponent,
     children: [
       {
-        path: '',
-        loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
-      },
-      {
         path: 'containers',
         loadChildren: () => import('./container/container.module').then(m => m.ContainerModule)
+      },
+      {
+        path: 'imagens',
+        loadChildren: () => import('./images/images.module').then(m => m.ImagesModule)
       }
     ]
   }

@@ -5,4 +5,5 @@ export interface Container {
   imageId: string;
   status: string;
   created: string;
+  state: string;
 }
